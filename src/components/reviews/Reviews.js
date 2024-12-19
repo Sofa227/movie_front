@@ -23,9 +23,15 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
         try
         {
-            const response = await api.post("/api/v1/reviews",{reviewBody:rev.value,imdbId:movieId});
+            const username = localStorage.getItem('username'); // Получаем username из localStorage
+            if (!username) {
+                alert('You must be logged in to leave a review');
+                return;
+            }
 
-            const updatedReviews = [...reviews, {body:rev.value}];
+            const response = await api.post("/api/v1/reviews",{reviewBody:rev.value,imdbId:movieId,username:username});
+
+            const updatedReviews = [...reviews, {body:rev.value, username:username}];
     
             rev.value = "";
     
@@ -35,10 +41,6 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
         {
             console.error(err);
         }
-        
-
-
-
     }
 
   return (
@@ -68,16 +70,21 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 {
                     reviews?.map((r) => {
                         return(
-                            <>
+                            <React.Fragment key={r.id}>
                                 <Row>
                                     <Col>{r.body}</Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <strong>Left by: {r.username}</strong>
+                                    </Col>
                                 </Row>
                                 <Row>
                                     <Col>
                                         <hr />
                                     </Col>
                                 </Row>                                
-                            </>
+                            </React.Fragment>
                         )
                     })
                 }
@@ -93,3 +100,4 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 }
 
 export default Reviews
+

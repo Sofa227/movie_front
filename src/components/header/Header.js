@@ -8,6 +8,11 @@ import {NavLink} from "react-router-dom";
 
 const Header = ({ isAuthenticated, setIsAuthenticated }) => {
  
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        localStorage.removeItem('username'); // Удаляем username из localStorage при выходе
+    }
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
@@ -25,7 +30,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
                     <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
                     </Nav>
                     {isAuthenticated ? (
-                        <Button variant="outline-info" onClick={() => setIsAuthenticated(false)}>Logout</Button>
+                        <Button variant="outline-info" onClick={handleLogout}>Logout</Button>
                     ) : (
                         <>
                             <NavLink className="nav-link" to="/login">Login</NavLink>
@@ -39,3 +44,4 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
 }
 
 export default Header
+
