@@ -10,6 +10,7 @@ import Reviews from './components/reviews/Reviews';
 import NotFound from './components/notFound/NotFound';
 import Register from './components/auth/Register.js';
 import Login from './components/auth/Login';
+import SearchResults from './components/search/SearchResults.js';
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<Home movies={movies} />} ></Route>
+            <Route path="/search" element={<SearchResults />}></Route>
             <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
             <Route path="/Reviews/:movieId" element ={<Reviews getMovieData = {getMovieData} movie={movie} reviews ={reviews} setReviews = {setReviews} />}></Route>
             <Route path="/register" element={<Register />}></Route>

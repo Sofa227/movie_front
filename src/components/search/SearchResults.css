@@ -1,0 +1,27 @@
+.search-results {
+        margin-top: 2rem;
+    }
+    
+    .search-card {
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.2s;
+    }
+    
+    .search-card:hover {
+        transform: scale(1.03);
+    }
+    
+    .loading {
+        text-align: center;
+        margin-top: 2rem;
+        color: white;
+    }
+    
+    .search-card .card-title {
+        color: white;
+    }
+    
+    .search-card .card-text {
+        color: rgba(255, 255, 255, 0.8);
+    }

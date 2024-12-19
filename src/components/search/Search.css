@@ -1,0 +1,20 @@
+.search-form {
+        min-width: 300px;
+        margin-right: 20px;
+    }
+    
+    .search-input {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: white !important;
+    }
+    
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    .search-input:focus {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-color: gold !important;
+        box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25) !important;
+    }

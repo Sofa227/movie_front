@@ -1,6 +1,6 @@
 .movie-carousel-container{
-    width: 100vw;
-    background-color: black;
+    width: 100%;
+    background-color: transparent;
 }
 .movie-poster{
     height: 300px;

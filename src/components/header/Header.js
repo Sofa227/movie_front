@@ -5,19 +5,24 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {NavLink} from "react-router-dom";
+import Search from "../search/Search";
 
 const Header = ({ isAuthenticated, setIsAuthenticated }) => {
  
     const handleLogout = () => {
         setIsAuthenticated(false);
+<<<<<<< Updated upstream
         localStorage.removeItem('username'); // Удаляем username из localStorage при выходе
+=======
+        localStorage.removeItem('username');
+>>>>>>> Stashed changes
     }
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/" style={{"color":'gold'}}>
-                    <FontAwesomeIcon icon ={faVideoSlash}/>Gold
+                    <FontAwesomeIcon icon ={faVideoSlash}/>Globus Film Voyage
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -26,15 +31,20 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
                         style={{maxHeight: '100px'}}
                         navbarScroll
                     >
-                    <NavLink className ="nav-link" to="/">Home</NavLink>
-                    <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
+                    <NavLink className ="nav-link" to="/">Главная</NavLink>
+                    <NavLink className ="nav-link" to="/watchList">Список желаний</NavLink> 
+                    <Search/>     
                     </Nav>
                     {isAuthenticated ? (
+<<<<<<< Updated upstream
                         <Button variant="outline-info" onClick={handleLogout}>Logout</Button>
+=======
+                        <Button variant="outline-info" onClick={handleLogout}>Выйти</Button>
+>>>>>>> Stashed changes
                     ) : (
                         <>
-                            <NavLink className="nav-link" to="/login">Login</NavLink>
-                            <NavLink className="nav-link" to="/register">Register</NavLink>
+                            <NavLink style={{marginRight: 15}} className="nav-link" to="/login">Войти</NavLink>
+                            <NavLink className="nav-link" to="/register">Регистрация</NavLink>
                         </>
                     )}
                 </Navbar.Collapse>
@@ -42,6 +52,10 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
         </Navbar>
     )
 }
+<<<<<<< Updated upstream
 
 export default Header
 
+=======
+export default Header
+>>>>>>> Stashed changes
