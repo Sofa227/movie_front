@@ -38,21 +38,20 @@ const SearchResults = () => {
             <Row xs={1} md={2} lg={4} className="g-4">
                 {results.map((movie) => (
                     <Col key={movie.imdbId}>
-                        <Card className="search-card">
-                            <Card.Img 
-                                variant="top" 
-                                src={movie.poster} 
-                                alt={movie.title}
-                            />
-                            <Card.Body>
-                                <Card.Title>{movie.title}</Card.Title>
-                                <Card.Text>{movie.genres?.join(', ')}</Card.Text>
-                                <Link to={`/movie/${movie.imdbId}`} className="btn btn-outline-light">
-                                    Подробнее
+                    <Card className="h-100 bg-dark text-white">
+                        <Card.Img variant="top" src={movie.poster} alt={movie.title} />
+                        <Card.Body>
+                            <Card.Title>
+                                <Link 
+                                    to={`/Reviews/${movie.imdbId}`} 
+                                    style={{ textDecoration: 'none', color: 'white' }}
+                                >
+                                    {movie.title}
                                 </Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                            </Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Col>
                 ))}
             </Row>
         </Container>
