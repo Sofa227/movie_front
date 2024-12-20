@@ -20,7 +20,7 @@ const Register = () => {
     } catch (error) {
       setError(error.response?.data?.error || 'Ошибка регистрации');
     }
-  };
+  };  
 
   const handleBack = () => {
     navigate(-1);
@@ -81,10 +81,10 @@ const Register = () => {
         />
         {error && <Typography color="error">{error}</Typography>}
         <Box mt={2} display="flex" justifyContent="space-between">
-          <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" style={{"background":'gold', fontWeight: 'bold'}}>
             Зарегистрироваться
           </Button>
-          <Button variant="outlined" onClick={handleBack}>
+          <Button variant="outlined" onClick={handleBack} style={{"color":'white', borderColor: 'gold'}}>
             Назад
           </Button>
         </Box>

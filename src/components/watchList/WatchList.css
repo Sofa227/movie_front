@@ -1,0 +1,22 @@
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    
+}
+
+.card-img-top {
+    height: 400px;
+    object-fit: cover;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+} 

@@ -11,6 +11,7 @@ import NotFound from './components/notFound/NotFound';
 import Register from './components/auth/Register.js';
 import Login from './components/auth/Login';
 import SearchResults from './components/search/SearchResults.js';
+import WatchList from './components/watchList/WatchList';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
             <Route path="/Reviews/:movieId" element ={<Reviews getMovieData = {getMovieData} movie={movie} reviews ={reviews} setReviews = {setReviews} />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}></Route>
+            <Route path="/watchList" element={<WatchList />}></Route>
             <Route path="*" element = {<NotFound/>}></Route>
           </Route>
       </Routes>

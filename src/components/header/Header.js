@@ -11,11 +11,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
  
     const handleLogout = () => {
         setIsAuthenticated(false);
-<<<<<<< Updated upstream
-        localStorage.removeItem('username'); // Удаляем username из localStorage при выходе
-=======
         localStorage.removeItem('username');
->>>>>>> Stashed changes
     }
 
     return (
@@ -36,11 +32,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
                     <Search/>     
                     </Nav>
                     {isAuthenticated ? (
-<<<<<<< Updated upstream
-                        <Button variant="outline-info" onClick={handleLogout}>Logout</Button>
-=======
                         <Button variant="outline-info" onClick={handleLogout}>Выйти</Button>
->>>>>>> Stashed changes
                     ) : (
                         <>
                             <NavLink style={{marginRight: 15}} className="nav-link" to="/login">Войти</NavLink>
@@ -52,10 +44,4 @@ const Header = ({ isAuthenticated, setIsAuthenticated }) => {
         </Navbar>
     )
 }
-<<<<<<< Updated upstream
-
 export default Header
-
-=======
-export default Header
->>>>>>> Stashed changes
