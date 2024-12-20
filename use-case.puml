@@ -1,0 +1,53 @@
+' Alt + D
+@startuml Система рецензий фильмов
+
+left to right direction
+skinparam actorStyle awesome
+
+actor "Пользователь" as user
+actor "Авторизованный пользователь" as authUser
+
+rectangle "Система рецензий фильмов" {
+    usecase "Просмотр фильмов" as UC1
+    usecase "Поиск фильмов" as UC2
+    usecase "Просмотр трейлера" as UC3
+    usecase "Регистрация аккаунта" as UC4
+    usecase "Вход" as UC5
+    usecase "Выход" as UC6
+    usecase "Добавить рецензию" as UC7
+    usecase "Управление списком желаемого" as UC8
+    usecase "Просмотр деталей фильма" as UC9
+    usecase "Добавить в список желаемого" as UC10
+    usecase "Удалить из списка желаемого" as UC11
+}
+
+user --> UC1
+user --> UC2
+user --> UC3
+user --> UC4
+user --> UC5
+user --> UC9
+
+authUser --|> user
+authUser --> UC6
+authUser --> UC7
+authUser --> UC8
+UC8 <|-- UC10
+UC8 <|-- UC11
+
+note right of UC1
+    Пользователи могут просматривать фильмы
+    на карусели главной страницы
+end note
+
+note right of UC7
+    Только авторизованные пользователи
+    могут писать рецензии
+end note
+
+note right of UC8
+    Управление списком желаемого требует
+    вторизации
+end note
+
+@enduml
